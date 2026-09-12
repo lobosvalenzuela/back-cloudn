@@ -1,4 +1,12 @@
-package main.java.com.ms_reporte.reporte.service;
+package com.ms_reporte.reporte.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ms_reporte.reporte.model.Reporte;
+import com.ms_reporte.reporte.repository.ReporteRepository;
 
 @Service
 public class ReporteService {

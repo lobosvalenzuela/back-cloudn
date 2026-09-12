@@ -1,4 +1,21 @@
-package main.java.com.ms_reporte.reporte.controller;
+package com.ms_reporte.reporte.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ms_reporte.reporte.model.Reporte;
+import com.ms_reporte.reporte.service.ReporteService;
 
 @RestController
 @RequestMapping("/api")
@@ -38,10 +55,10 @@ public class ReporteController {
                 return ResponseEntity.notFound().build();
             }
             oldReporte.setIdCliente(oldReporte.getIdCliente());
-            oldReporte.setIdProducto(oldReporte.getIdProducto());
+            oldReporte.setIdPedido(oldReporte.getIdPedido());
             oldReporte.setFechaReporte(oldReporte.getFechaReporte());
             oldReporte.setDescripcion(oldReporte.getDescripcion());
-            Reporte updatedReporte = reporteService.updateReporte(oldReporte);
+            Reporte updatedReporte = reporteService.createReporte(oldReporte);
             return ResponseEntity.ok(updatedReporte);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();

@@ -1,4 +1,12 @@
-package main.java.com.ms_stock.catalogo.service;
+package com.ms_stock.catalogo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ms_stock.catalogo.model.Catalogo;
+import com.ms_stock.catalogo.repository.CatalogoRepository;
 
 @Service
 public class CatalogoService {
